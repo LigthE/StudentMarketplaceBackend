@@ -1,0 +1,42 @@
+export const computers = [
+  {
+    name: "MacBook Air M2",
+    description: "Lätt och snabb laptop för studier",
+    price: 12000,
+    rentPrice: 800,
+    category: "Laptop",
+    image: "/laptopTest.jpg",
+  },
+  {
+    name: "Dell XPS 13",
+    description: "Kompakt Windows laptop",
+    price: 10000,
+    rentPrice: 600,
+    category: "Laptop",
+    image: "/laptopTest.jpg",
+  },
+  {
+    name: "iPad Air",
+    description: "Perfekt för anteckningar",
+    price: 6500,
+    rentPrice: 400,
+    category: "Tablet",
+    image: "/laptopTest.jpg",
+  },
+  {
+    name: "ThinkPad T14",
+    description: "Robust laptop för programmering",
+    price: 9000,
+    rentPrice: 550,
+    category: "Laptop",
+    image: "/laptopTest.jpg",
+  },
+  {
+    name: "Lenovo Ideapad",
+    description: "Prisvärd laptop för enkla uppgifter",
+    price: 2000,
+    rentPrice: 150,
+    category: "Laptop",
+    image: "/laptopTest.jpg",
+  },
+];

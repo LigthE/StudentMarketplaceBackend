@@ -1,0 +1,52 @@
+{
+  "info": {
+    "name": "TE4 Product API",
+    "description": "Student Marketplace API for TE4 project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Products",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/products"
+      }
+    },
+    {
+      "name": "Get Product by ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/products/:id"
+      }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/products",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Product Name\",\n  \"description\": \"Description\",\n  \"price\": 100,\n  \"rentPrice\": 10,\n  \"category\": \"Category\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Update Product",
+      "request": {
+        "method": "PUT",
+        "url": "http://localhost:5000/api/products/:id",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Name\",\n  \"description\": \"Updated Description\",\n  \"price\": 200,\n  \"rentPrice\": 20,\n  \"category\": \"Updated Category\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Delete Product",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:5000/api/products/:id"
+      }
+    }
+  ]
+}
