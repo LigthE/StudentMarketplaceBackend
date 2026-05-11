@@ -6,19 +6,29 @@ datasource db {
   provider = "postgresql"
 }
 
-model Product {
-  price       Float
-  createdAt   DateTime @default(now())
-  category    String
-  description String
-  name        String
-  rentPrice   Float
-  id          String   @id @default(uuid())
-}
-
 model User {
-  id        String   @id @default(uuid())
-  username  String   @unique
+  id        Int     @id @default(autoincrement())
+  username  String  @unique
   password  String
   createdAt DateTime @default(now())
+}
+
+model Order {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  username  String
+  items     String
+  total     Float
+  createdAt DateTime @default(now())
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  price       Float
+  rentPrice   Float
+  category    String
+  image       String   @default("/laptopTest.jpg")
+  createdAt   DateTime @default(now())
 }
