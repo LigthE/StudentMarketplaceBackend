@@ -1,5 +1,6 @@
 export const computers = [
   {
+    id: "1",
     name: "MacBook Air M2",
     description: "Lätt och snabb laptop för studier",
     price: 12000,
@@ -8,6 +9,7 @@ export const computers = [
     image: "/laptopTest.jpg",
   },
   {
+    id: "2",
     name: "Dell XPS 13",
     description: "Kompakt Windows laptop",
     price: 10000,
@@ -16,6 +18,7 @@ export const computers = [
     image: "/laptopTest.jpg",
   },
   {
+    id: "3",
     name: "iPad Air",
     description: "Perfekt för anteckningar",
     price: 6500,
@@ -24,6 +27,7 @@ export const computers = [
     image: "/laptopTest.jpg",
   },
   {
+    id: "4",
     name: "ThinkPad T14",
     description: "Robust laptop för programmering",
     price: 9000,
@@ -32,6 +36,7 @@ export const computers = [
     image: "/laptopTest.jpg",
   },
   {
+    id: "5",
     name: "Lenovo Ideapad",
     description: "Prisvärd laptop för enkla uppgifter",
     price: 2000,

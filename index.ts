@@ -7,9 +7,6 @@ import { computers } from "./src/data/computers";
 
 dotenv.config();
 
-// Mock database using data.ts
-let productDB = [...computers];
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -22,20 +19,9 @@ app.use((req: any, res: any, next: any) => {
   next();
 });
 
-// Product routes using local data
+// Product routes using hardcoded data.ts
 app.get("/api/products", (req: any, res: any) => {
-  res.json(productDB);
-});
-
-app.post("/api/products", (req: any, res: any) => {
-  const newProduct = { ...req.body, id: Date.now().toString() };
-  productDB.push(newProduct);
-  res.status(201).json(newProduct);
-});
-
-app.delete("/api/products/:id", (req: any, res: any) => {
-  productDB = productDB.filter((p: any) => p.id !== req.params.id);
-  res.json({ message: "Deleted" });
+  res.json(computers);
 });
 
 app.use("/api/users", userRoutes);

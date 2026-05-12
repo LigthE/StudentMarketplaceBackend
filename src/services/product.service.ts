@@ -1,40 +1,31 @@
+import { PrismaClient } from "@prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
+import dotenv from "dotenv";
 
-let prisma: any;
+dotenv.config();
 
-const getPrisma = () => {
-  if (!prisma) {
-    const connectionString = process.env.DATABASE_URL!;
-    const pool = new Pool({ connectionString });
-    const adapter = new PrismaPg(pool);
-    const { PrismaClient } = require("@prisma/client");
-    prisma = new PrismaClient({ adapter });
-  }
-  return prisma;
-};
+const connectionString = process.env.DATABASE_URL!;
+const pool = new Pool({ connectionString });
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({ adapter });
 
 export const getAllProducts = async () => {
-  const p = getPrisma();
-  return p.product.findMany();
+  return prisma.product.findMany();
 };
 
 export const getProductById = async (id: string) => {
-  const p = getPrisma();
-  return p.product.findUnique({ where: { id } });
+  return prisma.product.findUnique({ where: { id } });
 };
 
 export const createProduct = async (data: any) => {
-  const p = getPrisma();
-  return p.product.create({ data });
+  return prisma.product.create({ data });
 };
 
 export const updateProduct = async (id: string, data: any) => {
-  const p = getPrisma();
-  return p.product.update({ where: { id }, data });
+  return prisma.product.update({ where: { id }, data });
 };
 
 export const deleteProduct = async (id: string) => {
-  const p = getPrisma();
-  return p.product.delete({ where: { id } });
+  return prisma.product.delete({ where: { id } });
 };
