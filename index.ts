@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./src/routes/user.routes";
+import productRoutes from "./src/routes/product.routes";
 import { errorHandler } from "./src/middleware/errorHandler";
-import { computers } from "./src/data/computers";
 
 dotenv.config();
 
@@ -19,11 +19,7 @@ app.use((req: any, res: any, next: any) => {
   next();
 });
 
-// Product routes using hardcoded data.ts
-app.get("/api/products", (req: any, res: any) => {
-  res.json(computers);
-});
-
+app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use(errorHandler);
 
