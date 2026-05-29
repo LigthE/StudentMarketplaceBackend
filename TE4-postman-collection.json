@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "TE4 Product API",
-    "description": "Student Marketplace API for TE4 project",
+    "description": "Student Marketplace API for TE4 project – full CRUD + User/Orders",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -26,7 +26,7 @@
         "url": "http://localhost:5000/api/products",
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Product Name\",\n  \"description\": \"Description\",\n  \"price\": 100,\n  \"rentPrice\": 10,\n  \"category\": \"Category\"\n}"
+          "raw": "{\n  \"name\": \"MacBook Air M2\",\n  \"description\": \"Lätt och snabb laptop för studier\",\n  \"price\": 12000,\n  \"rentPrice\": 800,\n  \"category\": \"Laptop\"\n}"
         }
       }
     },
@@ -37,7 +37,7 @@
         "url": "http://localhost:5000/api/products/:id",
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Updated Name\",\n  \"description\": \"Updated Description\",\n  \"price\": 200,\n  \"rentPrice\": 20,\n  \"category\": \"Updated Category\"\n}"
+          "raw": "{\n  \"name\": \"Updated Name\",\n  \"description\": \"Updated Description\",\n  \"price\": 200,\n  \"rentPrice\": 20,\n  \"category\": \"Laptop\"\n}"
         }
       }
     },
@@ -46,6 +46,53 @@
       "request": {
         "method": "DELETE",
         "url": "http://localhost:5000/api/products/:id"
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/users/register",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"student1\",\n  \"password\": \"password123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/users/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"student1\",\n  \"password\": \"password123\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/users/users"
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:5000/api/users/orders",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": 1,\n  \"username\": \"student1\",\n  \"items\": [\n    {\n      \"id\": \"1\",\n      \"name\": \"MacBook Air M2\",\n      \"price\": 12000,\n      \"type\": \"buy\"\n    }\n  ]\n}"
+        }
+      }
+    },
+    {
+      "name": "Get All Orders",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:5000/api/users/orders"
       }
     }
   ]
